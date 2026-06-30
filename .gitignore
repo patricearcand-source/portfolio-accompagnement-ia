@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Fichiers temporaires Office (verrous Excel)
+~$*
+*.tmp

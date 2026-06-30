@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Analyse du Processus Manufacturier — Accompagnement IA</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{--navy:#1C457C;--orange:#E97627}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#F0F4F8;color:#1f2937;line-height:1.5}
+.header{background:linear-gradient(120deg,var(--navy),var(--orange));color:#fff;padding:40px 24px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.header h1{font-size:30px;margin-bottom:6px}
+.badge-top{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:14px}
+.sub{opacity:.92;font-size:15px}
+.grid{display:grid;gap:18px;margin:26px 0}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(165px,1fr))}
+.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(28,69,124,.07)}
+.kpi .lbl{font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+.kpi .val{font-size:26px;font-weight:800;color:var(--navy);margin-top:6px}
+.kpi .val.o{color:var(--orange)}
+.charts{grid-template-columns:repeat(auto-fit,minmax(330px,1fr))}
+.card h3{font-size:15px;color:var(--navy);margin-bottom:12px}
+.h2{font-size:20px;color:var(--navy);margin:30px 0 4px;border-left:5px solid var(--orange);padding-left:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #eef2f6}
+th{background:var(--navy);color:#fff;font-size:12px;text-transform:uppercase}
+.badge{color:#fff;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600}
+.recos{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.reco{border-top:4px solid var(--orange)}
+.reco h4{color:var(--navy);margin-bottom:8px}
+.reco p{font-size:14px;color:#475569}
+.foot{text-align:center;color:#64748b;font-size:13px;padding:30px}
+canvas{max-height:260px}
+</style></head><body>
+<div class="header"><div class="wrap">
+<span class="badge-top">Accompagnement IA · Patrice Arcand</span>
+<h1>Analyse du Processus Manufacturier</h1>
+<p class="sub">Optimisation des coûts de production · 2 000 observations · 4 lignes · Python + Chart.js</p>
+</div></div>
+<div class="wrap">
+<div class="grid kpis">
+<div class="card kpi"><div class="lbl">Coût / unité bonne</div><div class="val">$18.00</div></div>
+<div class="card kpi"><div class="lbl">Taux de défaut moyen</div><div class="val">3.75%</div></div>
+<div class="card kpi"><div class="lbl">Arrêt moyen</div><div class="val">47.7 min</div></div>
+<div class="card kpi"><div class="lbl">Meilleure ligne</div><div class="val o">Ligne D · $17.27</div></div>
+<div class="card kpi"><div class="lbl">Pire ligne</div><div class="val o">Ligne C · $18.44</div></div>
+<div class="card kpi"><div class="lbl">Économie potentielle</div><div class="val o">$0.60/u (3.2%)</div></div>
+</div>
+
+<div class="h2">Performance par ligne de production</div>
+<div class="grid charts">
+<div class="card"><h3>Coût par unité bonne ($)</h3><canvas id="c1"></canvas></div>
+<div class="card"><h3>Taux de défaut (%)</h3><canvas id="c2"></canvas></div>
+<div class="card"><h3>Temps d'arrêt moyen (min)</h3><canvas id="c3"></canvas></div>
+</div>
+
+<div class="h2">Décomposition & facteurs</div>
+<div class="grid charts">
+<div class="card"><h3>Décomposition des coûts (%)</h3><canvas id="c4"></canvas></div>
+<div class="card"><h3>Taux de défaut par quart</h3><canvas id="c5"></canvas></div>
+<div class="card"><h3>Tendance mensuelle du coût total (k$)</h3><canvas id="c6"></canvas></div>
+</div>
+
+<div class="h2">Tableau comparatif des lignes</div>
+<div class="card"><table><thead><tr><th>Ligne</th><th>Coût/unité</th><th>Taux défaut</th><th>Arrêts</th><th>Statut</th></tr></thead><tbody><tr><td><b>Ligne A</b></td><td>$18.30</td><td>3.90%</td><td>49 min</td><td><span class='badge' style='background:#E97627'>À surveiller</span></td></tr><tr><td><b>Ligne B</b></td><td>$17.96</td><td>3.14%</td><td>35 min</td><td><span class='badge' style='background:#0ea5e9'>Bon</span></td></tr><tr><td><b>Ligne C</b></td><td>$18.44</td><td>5.83%</td><td>86 min</td><td><span class='badge' style='background:#dc2626'>Critique</span></td></tr><tr><td><b>Ligne D</b></td><td>$17.27</td><td>2.13%</td><td>21 min</td><td><span class='badge' style='background:#16a34a'>Optimal</span></td></tr></tbody></table></div>
+
+<div class="h2">Recommandations (chiffrées)</div>
+<div class="grid recos">
+<div class="card reco"><h4>1 · Cibler la Ligne C en priorité</h4><p>La Ligne C coûte <b>$18.44/unité</b> (vs $17.27 pour la meilleure) avec un taux de défaut de <b>5,83 %</b> et <b>86 min</b> d'arrêt. La ramener à la moyenne des autres lignes représente <b>~$0.60/unité (3.2%)</b> d'économie.</p></div>
+<div class="card reco"><h4>2 · Réviser le quart de nuit</h4><p>Le quart de <b>Nuit</b> affiche le taux de défaut le plus élevé (<b>4,65 %</b> vs 3,30 % le jour). Renforcer supervision, éclairage et rotation réduirait les rebuts les plus coûteux.</p></div>
+<div class="card reco"><h4>3 · Maintenance préventive</h4><p>Les arrêts (et donc les défauts) sont concentrés sur les lignes les plus âgées. Un calendrier de maintenance préventive sur la Ligne C attaque directement le poste de coût n°1.</p></div>
+</div>
+</div>
+<div class="foot">Rapport généré en Python (pandas) — Patrice Arcand · <b>Accompagnement IA</b> · données : manufacturing_data.csv (2 000 lignes)</div>
+
+<script>
+const NAVY="#1C457C",ORANGE="#E97627";
+const lignes=["Ligne A","Ligne B","Ligne C","Ligne D"];
+const noLeg={plugins:{legend:{display:false}}},money={};
+new Chart(c1,{type:'bar',data:{labels:lignes,datasets:[{data:[18.3, 17.96, 18.44, 17.27],backgroundColor:[ORANGE,'#0ea5e9','#dc2626','#16a34a']}]},options:noLeg});
+new Chart(c2,{type:'bar',data:{labels:lignes,datasets:[{data:[3.9, 3.14, 5.83, 2.13],backgroundColor:NAVY}]},options:noLeg});
+new Chart(c3,{type:'bar',data:{labels:lignes,datasets:[{data:[49.18, 35.0, 86.0, 20.71],backgroundColor:ORANGE}]},options:noLeg});
+new Chart(c4,{type:'doughnut',data:{labels:['Matériaux','Main d\'œuvre','Énergie','Rebuts'],datasets:[{data:[95.1, 1.9, 0.9, 2.1],backgroundColor:[NAVY,ORANGE,'#0ea5e9','#dc2626']}]}});
+new Chart(c5,{type:'bar',data:{labels:["Jour","Soir","Nuit"],datasets:[{data:[3.3, 3.82, 4.65],backgroundColor:['#0ea5e9',ORANGE,'#dc2626']}]},options:noLeg});
+new Chart(c6,{type:'line',data:{labels:["2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12"],datasets:[{data:[992, 1080, 1363, 1376, 1246, 1361, 854, 1385, 1388, 1303, 1215, 1236, 1258, 1109, 1501, 1402, 1013, 1050, 1443, 1229, 1232, 1258, 1513, 1285],borderColor:ORANGE,backgroundColor:'rgba(233,118,39,.12)',fill:true,tension:.3,pointRadius:2}]},options:noLeg});
+</script>
+</body></html>
