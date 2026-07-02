@@ -28,7 +28,7 @@ brute jusqu'à la recommandation chiffrée.
 |---|--------|---------|-------|----------------|-----------|
 | 1 | **Coûts de production** | Manufacturier | 🐍 Python + HTML | Ligne C = 3,2 % d'économie potentielle | [Rapport](01_manufacturing_python/report.html) · [Code](01_manufacturing_python/generer_rapport_html.py) |
 | 2 | **Leviers de ventes** | Services + Manuf. | 📊 Excel + SQL | Manufacturier = 73 % des revenus | [Excel](02_ventes_sql_excel/Analyse_Ventes_Accompagnement_IA.xlsx) · [SQL](02_ventes_sql_excel/analyse_ventes.sql) |
-| 3 | **Pertes de clients** | SaaS | 🟧 Tableau Public | Churn 16,1 % — cause n°1 : le prix (30 %) | [Guide + données](03_churn_tableau/guide_tableau_churn.md) |
+| 3 | **Pertes de clients** | SaaS | 🟧 Tableau Public | Churn 16,1 % — cause n°1 : le prix (30 %) | [🟧 Viz en ligne](https://public.tableau.com/app/profile/patrice.arcand/viz/AnalyseduChurn-AccompagnementAI/AnalyseduChurnAccompagnementIA) · [Guide](03_churn_tableau/guide_tableau_churn.md) |
 | 4 | **KPI exécutif** | Multi | 📈 Power BI | +296 clients nets · 4 risques concurrentiels | [Guide + DAX](04_kpi_powerbi/guide_powerbi_kpi.md) |
 
 ---
@@ -66,7 +66,7 @@ portfolio-accompagnement-ia/
 - **Projet 3 (Tableau)** : suivez `guide_tableau_churn.md` pour reconstruire le viz dans Tableau Public.
 - **Projet 4 (Power BI)** : suivez `guide_powerbi_kpi.md` + collez les mesures de `mesures_dax.md` dans Power BI Desktop.
 
-> Les viz Tableau Public et Power BI interactifs seront liés ici dès leur publication.
+> ✅ Le viz **Tableau Public** est en ligne. Le rapport **Power BI** interactif sera lié ici dès sa publication.
 
 ---
 
