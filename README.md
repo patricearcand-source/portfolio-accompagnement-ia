@@ -10,9 +10,11 @@
 ![Tableau](https://img.shields.io/badge/Tableau-Public-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 
 **Patrice Arcand** — Analyste de données & conseiller IA
-🏢 Accompagnement IA · 📍 Québec, Canada · ✉️ patricearcand@gmail.com
+🏢 Accompagnement IA · 📍 Québec, Canada · ✉️ patricearcand@gmail.com · 🔗 [LinkedIn](https://www.linkedin.com/in/patrice-arcand/)
 
-🌐 **[Voir le portfolio en ligne →](https://patricearcand-source.github.io/portfolio-accompagnement-ia/)**
+🌐 **[Portfolio en ligne →](https://patricearcand-source.github.io/portfolio-accompagnement-ia/)** · 📖 [Études de cas](https://patricearcand-source.github.io/portfolio-accompagnement-ia/etudes-de-cas.html) · 📄 [CV](https://patricearcand-source.github.io/portfolio-accompagnement-ia/cv.html)
+
+> 🎓 Certifié **Google Data Analytics** (Coursera, 2 mai 2026). Données synthétiques réalistes à des fins de démonstration.
 
 </div>
 

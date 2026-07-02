@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Études de cas — Patrice Arcand | Accompagnement IA</title>
+<meta name="description" content="Études de cas détaillées : contexte, démarche, décisions, outils, impact et prochaines étapes pour 4 projets d'analyse de données.">
+<style>
+:root{--navy:#1C457C;--orange:#E97627;--dark:#0F172A;--mid:#475569;--light:#F0F4F8;--border:#E2E8F0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--dark);background:#fff;line-height:1.65}
+a{color:var(--navy)}
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(16,36,63,.95);backdrop-filter:blur(10px);padding:13px 28px;display:flex;justify-content:space-between;align-items:center}
+.nav a{color:#fff;font-size:14px;text-decoration:none}
+.nav .brand{font-weight:800}.nav .brand span{color:var(--orange)}
+.hero{background:linear-gradient(125deg,#10243f,#1C457C 60%,#E97627 145%);color:#fff;padding:110px 28px 46px;text-align:center}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:10px}
+.hero p{opacity:.9;max-width:680px;margin:0 auto;font-size:16px}
+.toc{max-width:920px;margin:26px auto 0;padding:0 28px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.toc a{background:#eef2f7;border:1px solid var(--border);border-radius:20px;padding:7px 15px;font-size:13.5px;text-decoration:none;color:var(--navy);font-weight:600}
+.wrap{max-width:920px;margin:0 auto;padding:20px 28px 60px}
+.cs{border:1px solid var(--border);border-radius:16px;padding:30px;margin:34px 0;box-shadow:0 3px 16px rgba(28,69,124,.06)}
+.cs-tool{display:inline-block;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.cs h2{color:var(--navy);font-size:24px;margin-bottom:4px}
+.cs .role{color:var(--orange);font-weight:600;font-size:14px;margin-bottom:18px}
+.block{margin:18px 0}
+.block h3{font-size:14px;text-transform:uppercase;letter-spacing:.6px;color:var(--orange);margin-bottom:6px}
+.block p,.block li{color:#334155;font-size:15px}
+.block ul{margin:6px 0 0 20px}
+.kchip{display:inline-block;background:var(--light);border-left:3px solid var(--navy);padding:8px 12px;border-radius:6px;font-size:14px;margin:4px 0}
+.alt{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px}
+.alt .opt{background:#f8fafc;border:1px solid var(--border);border-radius:8px;padding:12px}
+.alt .opt b{color:var(--navy)}
+.pc{font-size:13.5px;color:var(--mid)}.pc .p{color:#15803d}.pc .c{color:#b45309}
+.impact{background:linear-gradient(120deg,var(--navy),var(--orange));color:#fff;border-radius:10px;padding:16px 18px;font-size:15px;font-weight:600;margin-top:8px}
+.next{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:12px 14px;font-size:14px}
+.assump{font-size:13px;color:#64748b;font-style:italic;border-top:1px dashed var(--border);margin-top:18px;padding-top:12px}
+.deliv{margin-top:14px}
+.deliv a{display:inline-block;font-size:13px;font-weight:600;border:1px solid var(--navy);color:var(--navy);border-radius:8px;padding:7px 13px;margin:4px 6px 0 0;text-decoration:none}
+.deliv a:hover{background:var(--navy);color:#fff}
+.foot{background:var(--dark);color:#cbd5e1;text-align:center;padding:30px;font-size:13px}
+.foot a{color:var(--orange)}
+</style></head>
+<body>
+<nav class="nav"><a class="brand" href="index.html">Patrice Arcand <span>| Accompagnement IA</span></a><a href="index.html">← Retour au portfolio</a></nav>
+
+<header class="hero">
+  <h1>Études de cas</h1>
+  <p>Au-delà des résultats : le <b>contexte</b>, la <b>démarche</b>, les <b>décisions</b> (et pourquoi), l'<b>impact</b> et les <b>prochaines étapes</b>. La façon dont j'aborde un problème d'affaires par la donnée.</p>
+  <div class="toc">
+    <a href="#manufacturier">🐍 Coûts de production</a>
+    <a href="#ventes">📊 Leviers de ventes</a>
+    <a href="#churn">🟧 Pertes de clients</a>
+    <a href="#kpi">📈 KPI exécutif</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ===================== CAS 1 ===================== -->
+<section class="cs" id="manufacturier">
+  <span class="cs-tool" style="background:#dbeafe;color:#1d4ed8">Python · Pandas · HTML</span>
+  <h2>Réduire les coûts de production d'un fabricant</h2>
+  <div class="role">Rôle : analyste de données · Livrable : rapport interactif Python → HTML</div>
+
+  <div class="block"><h3>Contexte</h3><p>Un fabricant exploite 4 lignes de production. La direction veut <b>réduire ses coûts sans nuire à la qualité</b>, mais ne sait pas <b>où concentrer l'effort</b>. Jeu de 2 000 lots de production sur 24 mois.</p></div>
+
+  <div class="block"><h3>Problème à résoudre</h3><p>Les coûts et les défauts sont-ils répartis uniformément entre les lignes et les quarts de travail ? Quel poste de coût attaquer en premier pour le meilleur rendement ?</p></div>
+
+  <div class="block"><h3>Démarche, outils & décisions</h3>
+    <ul>
+      <li><b>Python (Pandas)</b> pour agréger les 2 000 lots : coût par unité, taux de défaut, temps d'arrêt — par ligne et par quart.</li>
+      <li><b>Décision clé :</b> mesurer le <b>« coût par unité BONNE »</b> plutôt que par unité produite. <i>Pourquoi :</i> un défaut coûte deux fois (matière perdue + reprise) — cet indicateur révèle le vrai coût caché.</li>
+      <li><b>Génération d'un rapport HTML</b> (Chart.js) directement depuis le script Python → reproductible et toujours exact quand les données changent.</li>
+    </ul>
+    <div class="kchip">💡 Constat : la <b>Ligne C</b> coûte <b>18,44 $/unité</b> (vs 17,27 $ pour la meilleure), avec <b>5,83 %</b> de défauts et <b>86 min</b> d'arrêt — de loin la plus problématique.</div>
+  </div>
+
+  <div class="block"><h3>Solution & alternatives</h3>
+    <div class="alt">
+      <div class="opt"><b>✅ Retenue — cibler la Ligne C.</b> <span class="pc"><span class="p">+ Effort concentré sur le plus gros gisement (~3,2 % d'économie).</span> <span class="c">− Demande un diagnostic terrain de la ligne.</span></span></div>
+      <div class="opt"><b>Alternative — optimiser toutes les lignes également.</b> <span class="pc"><span class="p">+ Simple à annoncer.</span> <span class="c">− Dilue l'effort ; rendement plus faible.</span></span></div>
+      <div class="opt"><b>Alternative — s'attaquer d'abord au quart de nuit</b> (défauts 4,65 % vs 3,30 % le jour). <span class="pc"><span class="p">+ Gain transversal.</span> <span class="c">− N'adresse pas la cause structurelle de la Ligne C.</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>Impact</h3><div class="impact">Ramener la Ligne C à la moyenne des autres = ~3,2 % d'économie sur le poste de coût n°1 — un objectif chiffré et défendable.</div></div>
+
+  <div class="block"><h3>Prochaines étapes</h3><div class="next"><b>Quoi :</b> plan de maintenance préventive de la Ligne C + revue du quart de nuit. <b>Qui :</b> directeur de production. <b>Quand :</b> prochain trimestre, avec suivi mensuel du coût/unité bonne.</div></div>
+
+  <div class="deliv"><a href="01_manufacturing_python/report.html">Voir le rapport interactif →</a><a href="https://github.com/patricearcand-source/portfolio-accompagnement-ia/blob/main/01_manufacturing_python/generer_rapport_html.py">Code Python</a></div>
+  <p class="assump">Hypothèses : données synthétiques réalistes générées à des fins de démonstration. Le coût/unité bonne suppose un coût de reprise ≈ coût matière du défaut.</p>
+</section>
+
+<!-- ===================== CAS 2 ===================== -->
+<section class="cs" id="ventes">
+  <span class="cs-tool" style="background:#dcfce7;color:#15803d">Excel · SQL · Power Query</span>
+  <h2>Identifier ce qui favorise réellement les ventes</h2>
+  <div class="role">Rôle : analyste de données · Livrable : classeur Excel + scripts SQL</div>
+
+  <div class="block"><h3>Contexte</h3><p>Une entreprise vend dans <b>deux secteurs</b> (Services & Manufacturier) via plusieurs canaux et régions. Elle veut <b>où concentrer son effort commercial</b>. Jeu de 3 000 ventes (2023-2025).</p></div>
+
+  <div class="block"><h3>Problème à résoudre</h3><p>Parmi tous les facteurs (secteur, canal, région, taille de client, saison, nombre de réunions…), lesquels <b>tirent vraiment</b> le chiffre d'affaires ?</p></div>
+
+  <div class="block"><h3>Démarche, outils & décisions</h3>
+    <ul>
+      <li><b>SQL</b> — 10 requêtes d'agrégation (par secteur, canal, région, taille, saison) + une vue « segments gagnants ».</li>
+      <li><b>Excel / Power Query</b> — pipeline M de nettoyage, puis tableau de bord à formules vivantes (SUMIFS/AVERAGEIFS) et graphiques.</li>
+      <li><b>Décision clé :</b> analyser au niveau <b>segment</b> plutôt que par variables comportementales (réunions, durée de cycle). <i>Pourquoi :</i> ces variables montraient une corrélation quasi nulle avec le revenu — le vrai signal est structurel (qui achète, par quel canal), pas transactionnel.</li>
+    </ul>
+    <div class="kchip">💡 Constat : le <b>Manufacturier = 73 %</b> des revenus ; le canal <b>Direct</b> pèse 48 % (par volume, pas par marge) ; les <b>grands comptes</b> ont un panier <b>3,4× la PME</b>.</div>
+  </div>
+
+  <div class="block"><h3>Solution & alternatives</h3>
+    <div class="alt">
+      <div class="opt"><b>✅ Retenue — prioriser Manufacturier × Direct × grands comptes.</b> <span class="pc"><span class="p">+ Cible le rendement le plus élevé par effort investi.</span> <span class="c">− Risque de dépendance à un segment.</span></span></div>
+      <div class="opt"><b>Alternative — investir l'Ontario sous-pénétré</b> (27,8 % des revenus). <span class="pc"><span class="p">+ Diversification géographique.</span> <span class="c">− Coût d'acquisition initial plus élevé.</span></span></div>
+      <div class="opt"><b>Alternative — charger le closing sur Q4</b> (déc. +25 % vs mois moyen). <span class="pc"><span class="p">+ Exploite la saisonnalité.</span> <span class="c">− Concentre la charge de travail.</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>Impact</h3><div class="impact">Une réallocation de l'effort commercial vers les segments à haut rendement plutôt qu'un effort uniforme — plus de revenus à budget commercial constant.</div></div>
+
+  <div class="block"><h3>Prochaines étapes</h3><div class="next"><b>Quoi :</b> plan de comptes stratégiques (grands comptes) + campagne Q4 + test d'acquisition Ontario. <b>Qui :</b> direction des ventes. <b>Quand :</b> planification du prochain exercice.</div></div>
+
+  <div class="deliv"><a href="02_ventes_sql_excel/Analyse_Ventes_Accompagnement_IA.xlsx">Télécharger l'Excel ↓</a><a href="https://github.com/patricearcand-source/portfolio-accompagnement-ia/blob/main/02_ventes_sql_excel/analyse_ventes.sql">Voir le SQL</a></div>
+  <p class="assump">Hypothèses : données synthétiques réalistes générées à des fins de démonstration ; les corrélations comportementales faibles reflètent ce jeu de données précis.</p>
+</section>
+
+<!-- ===================== CAS 3 ===================== -->
+<section class="cs" id="churn">
+  <span class="cs-tool" style="background:#fde9d8;color:#c2410c">Tableau Public</span>
+  <h2>Comprendre les causes de perte de clients (churn)</h2>
+  <div class="role">Rôle : analyste de données · Livrable : tableau de bord Tableau Public interactif</div>
+
+  <div class="block"><h3>Contexte</h3><p>Une entreprise SaaS perd <b>16,1 %</b> de ses clients. La direction veut <b>comprendre pourquoi</b> et <b>qui est à risque</b> pour agir. Jeu de 5 000 clients.</p></div>
+
+  <div class="block"><h3>Problème à résoudre</h3><p>Quelles sont les vraies causes de départ ? Peut-on repérer les clients à risque <b>avant</b> qu'ils partent ?</p></div>
+
+  <div class="block"><h3>Démarche, outils & décisions</h3>
+    <ul>
+      <li><b>Tableau Public</b> — champs calculés (taux de churn, cohortes d'ancienneté, tiers de risque, segments d'engagement) et tableau de bord interactif filtrable.</li>
+      <li><b>Décision clé :</b> croiser les <b>causes déclarées</b> (raison de départ) ET les <b>signaux comportementaux</b> (inactivité, mention d'un concurrent). <i>Pourquoi :</i> les causes expliquent le passé ; les signaux permettent d'agir en amont (rétention prédictive).</li>
+    </ul>
+    <div class="kchip">💡 Constat : cause n°1 = <b>le prix (30 %)</b>, puis la concurrence (21,7 %). Les <b>contrats mensuels</b> et les clients de <b>0-6 mois</b> churnent le plus ; une mention de concurrent = +3,7 pts de risque.</div>
+  </div>
+
+  <div class="block"><h3>Solution & alternatives</h3>
+    <div class="alt">
+      <div class="opt"><b>✅ Retenue — sécuriser l'onboarding (0-6 mois) + alertes précoces.</b> <span class="pc"><span class="p">+ Attaque le pic de churn et rend la rétention proactive.</span> <span class="c">− Demande un processus d'alerte outillé.</span></span></div>
+      <div class="opt"><b>Alternative — revoir la politique de prix.</b> <span class="pc"><span class="p">+ Adresse la cause n°1.</span> <span class="c">− Impact sur la marge ; effet plus lent.</span></span></div>
+      <div class="opt"><b>Alternative — pousser l'engagement annuel/pluriannuel.</b> <span class="pc"><span class="p">+ Contrats longs = churn plus faible (13,7 % vs 17,9 %).</span> <span class="c">− Résistance possible à l'engagement long.</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>Impact</h3><div class="impact">Concentrer les efforts de rétention là où le risque est réellement concentré (nouveaux clients, mentions de concurrent) plutôt que sur toute la base — meilleur rendement de rétention.</div></div>
+
+  <div class="block"><h3>Prochaines étapes</h3><div class="next"><b>Quoi :</b> programme d'onboarding 6 mois + déclencheurs d'alerte (inactivité &gt;90 j, mention concurrent). <b>Qui :</b> Customer Success. <b>Quand :</b> pilote sur le prochain trimestre, mesuré par cohorte.</div></div>
+
+  <div class="deliv"><a href="https://public.tableau.com/app/profile/patrice.arcand/viz/AnalyseduChurn-AccompagnementAI/AnalyseduChurnAccompagnementIA" target="_blank" rel="noopener">Voir le viz Tableau →</a><a href="https://github.com/patricearcand-source/portfolio-accompagnement-ia/blob/main/03_churn_tableau/guide_tableau_churn.md">Démarche détaillée</a></div>
+  <p class="assump">Hypothèses : données synthétiques réalistes générées à des fins de démonstration.</p>
+</section>
+
+<!-- ===================== CAS 4 ===================== -->
+<section class="cs" id="kpi">
+  <span class="cs-tool" style="background:#fef9c3;color:#a16207">Power BI · DAX</span>
+  <h2>Un tableau de bord KPI pour la direction</h2>
+  <div class="role">Rôle : analyste de données · Livrable : rapport Power BI (4 pages)</div>
+
+  <div class="block"><h3>Contexte</h3><p>La direction jongle avec des données éparpillées (ventes, opportunités, satisfaction, veille). Elle veut <b>une vue unique</b> pour décider vite.</p></div>
+
+  <div class="block"><h3>Problème à résoudre</h3><p>Comment donner une lecture 360° de la performance <b>et</b> transformer la veille concurrentielle en décisions d'action ?</p></div>
+
+  <div class="block"><h3>Démarche, outils & décisions</h3>
+    <ul>
+      <li><b>Power BI</b> — modèle à 4 tables, mesures <b>DAX</b>, et 4 pages : Ventes, Opportunités, Satisfaction, Veille concurrentielle.</li>
+      <li><b>Décision clé :</b> ajouter une page « veille » qui met en évidence les <b>initiatives concurrentes NON adressées</b>. <i>Pourquoi :</i> une veille passive ne sert à rien — la rendre <b>actionnable</b> (chaque initiative = risque ou opportunité à arbitrer).</li>
+    </ul>
+    <div class="kchip">💡 Constat : croissance saine (<b>+296 clients nets</b>, pipeline <b>43,5 M$</b>, NPS 50) mais <b>4 initiatives concurrentes non adressées</b>, dont plusieurs à impact élevé.</div>
+  </div>
+
+  <div class="block"><h3>Solution & alternatives</h3>
+    <div class="alt">
+      <div class="opt"><b>✅ Retenue — tableau de bord unique + arbitrage des 4 initiatives.</b> <span class="pc"><span class="p">+ Décision exécutive éclairée et veille actionnable.</span> <span class="c">− Requiert une mise à jour régulière des données.</span></span></div>
+      <div class="opt"><b>Alternative — rapports séparés par thème.</b> <span class="pc"><span class="p">+ Chaque équipe garde son outil.</span> <span class="c">− Pas de vue d'ensemble ; silos.</span></span></div>
+    </div>
+  </div>
+
+  <div class="block"><h3>Impact</h3><div class="impact">Une seule source de vérité pour la direction, et une veille concurrentielle qui débouche sur des décisions plutôt que de dormir dans un fichier.</div></div>
+
+  <div class="block"><h3>Prochaines étapes</h3><div class="next"><b>Quoi :</b> arbitrer les 4 initiatives non adressées (risque vs opportunité) + cadence de mise à jour mensuelle. <b>Qui :</b> comité de direction. <b>Quand :</b> revue mensuelle.</div></div>
+
+  <div class="deliv"><a href="https://github.com/patricearcand-source/portfolio-accompagnement-ia/raw/main/04_kpi_powerbi/Tableau_de_bord_KPI_executif.pbix">Télécharger le rapport .pbix ↓</a></div>
+  <p class="assump">Hypothèses : données synthétiques réalistes générées à des fins de démonstration.</p>
+</section>
+
+</div>
+
+<footer class="foot">
+  <p><b style="color:#fff">Patrice Arcand — Accompagnement IA</b></p>
+  <p><a href="mailto:patricearcand@gmail.com">patricearcand@gmail.com</a> · <a href="https://www.linkedin.com/in/patrice-arcand/" target="_blank" rel="noopener">LinkedIn</a> · <a href="index.html">Retour au portfolio</a></p>
+</footer>
+</body></html>
