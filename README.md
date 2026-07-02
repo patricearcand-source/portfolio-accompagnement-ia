@@ -29,7 +29,7 @@ brute jusqu'à la recommandation chiffrée.
 | 1 | **Coûts de production** | Manufacturier | 🐍 Python + HTML | Ligne C = 3,2 % d'économie potentielle | [Rapport](01_manufacturing_python/report.html) · [Code](01_manufacturing_python/generer_rapport_html.py) |
 | 2 | **Leviers de ventes** | Services + Manuf. | 📊 Excel + SQL | Manufacturier = 73 % des revenus | [Excel](02_ventes_sql_excel/Analyse_Ventes_Accompagnement_IA.xlsx) · [SQL](02_ventes_sql_excel/analyse_ventes.sql) |
 | 3 | **Pertes de clients** | SaaS | 🟧 Tableau Public | Churn 16,1 % — cause n°1 : le prix (30 %) | [🟧 Viz en ligne](https://public.tableau.com/app/profile/patrice.arcand/viz/AnalyseduChurn-AccompagnementAI/AnalyseduChurnAccompagnementIA) · [Guide](03_churn_tableau/guide_tableau_churn.md) |
-| 4 | **KPI exécutif** | Multi | 📈 Power BI | +296 clients nets · 4 risques concurrentiels | [📈 Rapport .pbix](https://github.com/patricearcand-source/portfolio-accompagnement-ia/raw/main/04_kpi_powerbi/Tableau%20de%20bord%20KPI%20ex%C3%A9cutif.pbix) · [Guide](04_kpi_powerbi/guide_powerbi_kpi.md) |
+| 4 | **KPI exécutif** | Multi | 📈 Power BI | +296 clients nets · 4 risques concurrentiels | [📈 Rapport .pbix](https://github.com/patricearcand-source/portfolio-accompagnement-ia/raw/main/04_kpi_powerbi/Tableau_de_bord_KPI_executif.pbix) · [Guide](04_kpi_powerbi/guide_powerbi_kpi.md) |
 
 ---
 
